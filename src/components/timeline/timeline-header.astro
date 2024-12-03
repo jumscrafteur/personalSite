@@ -1,0 +1,8 @@
+---
+const { icon, ...props } = Astro.props;
+---
+
+<li class="ml-[-1.4rem] print:ml-0 flex items-center gap-4 print:gap-2">
+    <span class="w-10 print:w-auto h-10 rounded-full bg-gray-300 dark:bg-zinc-700 shadow-[0_0_0_6px_#fff] dark:shadow-[0_0_0_6px_#18181B] flex items-center justify-center text-xl print:hidden">{icon}</span>
+    <span class="text-lg print:text-xl"><slot /></span>
+</li>

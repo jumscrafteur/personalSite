@@ -1,11 +1,343 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import LucideIcon from "../components/lucide-icon.astro";
+import {Mail, Linkedin, Github} from "lucide";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import SectionTitle from "../components/section-title.astro";
+import SectionContainer from "../components/section-container.astro";
+
+import Separator from "../components/separator.astro";
+import Footer from "../components/footer.astro";
+
+import TimelineContainer from "../components/timeline/timeline-container.astro";
+import TimelineElement from "../components/timeline/timeline-element.astro";
+import TimelineHeader from "../components/timeline/timeline-header.astro";
+import TimelineBody from "../components/timeline/timeline-body.astro";
+
+import SkillContainer from "../components/skill/skill-container.astro";
+import SkillCol from "../components/skill/skill-col.astro";
+import SkillTable from "../components/skill/skill-table.astro";
+import SkillRow from "../components/skill/skill-row.astro";
+
+import ProjectContainer from "../components/project/project-container.astro"
+import ProjectCard from "../components/project/project-card.astro"
+import ProjectTitle from "../components/project/project-title.astro"
+import ProjectBadgeContainer from "../components/project/project-badge-container.astro"
+import ProjectBadge from "../components/project/project-badge-item.astro"
+import ProjectBody from "../components/project/project-body.astro"
+
+import XPContainer from "../components/xp/xp-container.astro"
+import XPCard from "../components/xp/xp-card.astro"
+import XPTitle from "../components/xp/xp-title.astro"
+import XPBody from "../components/xp/xp-body.astro"
+
+import MAAImg from "../assets/images/projects/MAA.png"
+import KillerImg from "../assets/images/projects/Killer.png"
+import KatshingImg from "../assets/images/projects/Katshing.png"
+import ORandomImg from "../assets/images/projects/ORandom.png"
+import PyesarImg from "../assets/images/projects/Pyesar.png"
+import BloomingImg from "../assets/images/projects/Blooming.png"
+
+import R3Img from "../assets/images/projects/R3.png"
+import CodinsaImg from "../assets/images/projects/Codinsa.png"
+import Killer2Img from "../assets/images/projects/Killer_2.png"
+import MorcomImg from "../assets/images/projects/Morcom.png"
+import NDIImg from "../assets/images/projects/NDI.png"
 ---
 
 <Layout>
-	<Welcome />
+    <main class="flex flex-col max-w-screen-lg mx-auto px-4 gap-8">
+        <!-- hero -->
+        <SectionContainer class="mt-32 print:mt-0 print:break-after-avoid">
+            <h1 class="text-6xl font-black block w-fit tracking-tighter text-center">Hugo Sansané 👋</h1>
+            <h4 class="text-lg">Aspiring Software Engineer</h4>
+            <div class="flex gap-8 w-fit print:hidden">
+                <a href="mailto:hugo.sansane@insa-cvl.fr" class="flex gap-2 text-white bg-stone-500 py-2 px-4 rounded-full">
+                    <LucideIcon icon={Mail}/>
+                </a>
+                <a href="https://www.linkedin.com/in/hugo-sansan%C3%A9/"
+                   class="flex gap-2 text-white bg-[#0e76a8] py-2 px-4 rounded-full">
+                    <LucideIcon icon={Linkedin}/>
+                </a>
+                <a href="https://github.com/jumscrafteur"
+                   class="flex gap-2 text-white bg-[#24292e] py-2 px-4  rounded-full">
+                    <LucideIcon icon={Github}/>
+                </a>
+            </div>
+            <p class="flex-col px-4 py-2 text-center w-fit hidden print:flex bg-gray-100 rounded-xl border-2 border-dashed">
+                <a href="mailto:hugo.sansane@insa-cvl.fr">
+                    hugo.sansane@insa-cvl.fr
+                </a>
+                <span>+336 17 13 93 67</span>
+            </p>
+        </SectionContainer>
+
+        <Separator text="✨"/>
+
+        <!-- curriculum -->
+        <SectionContainer>
+            <SectionTitle class="hidden print:block">My Curriculum</SectionTitle>
+            <div class="flex flex-col gap-2">
+                <p>Throughout my training, my learning strategies have been based on two strong foundations. A formal
+                    learning
+                    phase that provided a rigorous approach and enabled me to tackle subjects that I wouldn't have
+                    tackled
+                    otherwise, followed by a personal learning phase that enabled me to delve deeper into the subjects
+                    covered
+                    in class, to look at them from a different perspective or to extend my knowledge to fields that
+                    aren't
+                    covered in a formal setting.</p>
+                <p>This methodology has enabled me to develop skills in modern technologies that are of interest to me
+                    for
+                    my
+                    future career, particularly in the fields of software engineering and the web, while at the same
+                    time
+                    structuring my development practices.</p>
+            </div>
+
+            <TimelineContainer>
+                <TimelineElement>
+                    <TimelineHeader icon="🧑‍🎓">5-month internship in 4th year at <strong>ANAF</strong></TimelineHeader>
+                    <TimelineBody>
+                        <p>An internship with the Association Nationale des Apprentis de France (ANAF).</p>
+                        <p>The primary missions involved updating and improving the Mesaidesapprenti.fr website, an
+                            online
+                            simulator designed to help apprentices identify available financial aid.</p>
+                        <p>The project, initially developed by an external agency, required in-depth recovery and
+                            analysis
+                            of the source code, despite the absence of documentation. </p>
+                        <p>The main tasks included redesigning the site's graphics to improve ergonomics and
+                            accessibility,
+                            as well as optimizing the backoffice to better manage usage statistics and better understand
+                            user needs.</p>
+                    </TimelineBody>
+                </TimelineElement>
+                <TimelineElement>
+                    <TimelineHeader icon="🌍">Foreign studies at <strong>Politehnica University of Bucharest</strong>
+                    </TimelineHeader>
+                    <TimelineBody>
+                        <p>4-month student exchange at the Polytechnic University of Bucharest.</p>
+                        <p>This exchange enabled me to deepen my knowledge of software engineering, particularly in
+                            design
+                            patterns, Java programming and image processing.</p>
+                        <p>The exchange also enabled me to discover other cultures by meeting students from a large
+                            number
+                            of European countries. </p>
+                    </TimelineBody>
+                </TimelineElement>
+                <TimelineElement>
+                    <TimelineHeader icon="🐗">
+                        Computer Science and Computer Security Degree at <strong>INSA CVL</strong>
+                    </TimelineHeader>
+                    <TimelineBody>
+                        <p>5-year engineering degree in IT security, infrastructure and network security.</p>
+                        <p>This training also covers global IT concepts such as data structures, database management,
+                            language theory and a wide range of human sciences such as finance, management and
+                            communication.</p>
+                    </TimelineBody>
+                </TimelineElement>
+            </TimelineContainer>
+        </SectionContainer>
+
+        <Separator text="✨"/>
+
+        <!-- skills -->
+        <SectionContainer>
+            <SectionTitle>My Skills</SectionTitle>
+
+            <SkillContainer>
+                <SkillCol>
+                    <SkillTable header="Web & Mobile">
+                        <SkillRow><u>Basics</u> : HTML, PHP, CSS, Javascript/Typescript</SkillRow>
+                        <SkillRow><u>Frameworks</u> : Svelte, React, CodeIgniter</SkillRow>
+                        <SkillRow><u>Mobile</u> : React-Native, Expo, Swift UI</SkillRow>
+                        <SkillRow><u>Backend & Data</u> : Express, HTMX, SQL, GraphQL, MongoDB, Firestore</SkillRow>
+                    </SkillTable>
+                    <SkillTable header="Graphic Design">
+                        <SkillRow><u>UX Design</u> : Figma, Inkscape</SkillRow>
+                        <SkillRow><u>Adobe suite </u> : Photoshop, Illustrator</SkillRow>
+                    </SkillTable>
+                </SkillCol>
+                <SkillCol>
+                    <SkillTable header="DevOps">
+                        <SkillRow><u>Deployment</u> : Docker, Nix</SkillRow>
+                        <SkillRow><u>Collaboration</u> : Git, Github</SkillRow>
+                        <SkillRow><u>Virtualisation</u> : VMware, Virtual Box</SkillRow>
+                    </SkillTable>
+                    <SkillTable header="Scripting & Programming">
+                        <SkillRow><u>Scripting</u> : Python, Bashx</SkillRow>
+                        <SkillRow><u>Game Engines</u> : Pygame, Unity</SkillRow>
+                        <SkillRow><u>Data Visualisation</u> : Chart.js, Pandas, Matplotlib</SkillRow>
+                    </SkillTable>
+                </SkillCol>
+
+
+            </SkillContainer>
+
+        </SectionContainer>
+
+        <Separator text="✨"/>
+
+        <!-- Projects -->
+        <SectionContainer>
+            <SectionTitle>My Projects</SectionTitle>
+
+            <ProjectContainer>
+                <ProjectCard image={MAAImg} imageAlt="Mes Aides D'apprenti">
+                    <ProjectTitle>Mes Aides d'Apprenti website</ProjectTitle>
+                    <ProjectBadgeContainer>
+                        <ProjectBadge iconName="PHP" color="#777BB4"/>
+                        <ProjectBadge iconName="Apache" color="#D22128"/>
+                        <ProjectBadge iconName="Codeigniter" color="#EF4223"/>
+                    </ProjectBadgeContainer>
+                    <hr class="my-2 print:hidden"/>
+                    <ProjectBody>
+                        <p>mesaidesapprenti.fr is an online tool that helps apprentices identify the financial aid they
+                            qualify for.</p>
+                        <p>Using a simple simulator, they can find schemes suited to their needs, like housing or
+                            transport assistance. It offers a clear overview to help young people manage their budget
+                            during their apprenticeship.</p>
+                    </ProjectBody>
+                </ProjectCard>
+
+                <ProjectCard image={KillerImg} imageAlt="Killer App">
+                    <ProjectTitle>Killer Project</ProjectTitle>
+                    <ProjectBadgeContainer>
+                        <ProjectBadge iconName="React" badgeText="React Native" color="#61DAFB" iconColor="black"/>
+                        <ProjectBadge iconName="Rust" color="#000000"/>
+                    </ProjectBadgeContainer>
+                    <hr class="my-2 print:hidden"/>
+                    <ProjectBody>
+                        <p>The Killer is a life-size game held annually on the Bourges campus of INSA Centre Val de
+                            Loire. Each player gets a card with a QR code and uses an app to discover their target and
+                            two available weapons. The goal: eliminate your target with a weapon while avoiding being
+                            eliminated by your own hunter.</p>
+                    </ProjectBody>
+                </ProjectCard>
+
+                <ProjectCard image={KatshingImg} imageAlt="Katshing App">
+                    <ProjectTitle>Katshing</ProjectTitle>
+                    <ProjectBadgeContainer>
+                        <ProjectBadge iconName="Svelte" color="#FF3E00"/>
+                    </ProjectBadgeContainer>
+                    <hr class="my-2 print:hidden"/>
+                    <ProjectBody>
+                        <p>A Web App that lets you convert different currencies using the fixer currency API.</p>
+                    </ProjectBody>
+                </ProjectCard>
+
+                <ProjectCard image={ORandomImg} imageAlt="O'Random App">
+                    <ProjectTitle>O'Random</ProjectTitle>
+                    <ProjectBadgeContainer>
+                        <ProjectBadge iconName="Svelte" color="#FF3E00"/>
+                        <ProjectBadge iconName="Vite" color="#646CFF"/>
+                        <ProjectBadge iconName="TS" color="#3178C6"/>
+                        <ProjectBadge iconName="PostCSS" color="#DD3A0A"/>
+                        <ProjectBadge iconName="Nodejs" color="#3c873a"/>
+                        <ProjectBadge iconName="Express" color="#353535"/>
+                    </ProjectBadgeContainer>
+                    <hr class="my-2 print:hidden"/>
+                    <ProjectBody>
+                        <p>Implementation of different Front-End and Back-End for a French O-Tacos random order
+                            generator.</p>
+                        <p>The Goal here is to have a simple project that allows me to discover and compare new
+                            frameworks by re-creating the same layout every single time.</p>
+                    </ProjectBody>
+                </ProjectCard>
+
+                <ProjectCard image={PyesarImg} imageAlt="Pyesar App">
+                    <ProjectTitle>Caesar III Clone</ProjectTitle>
+                    <ProjectBadgeContainer>
+                        <ProjectBadge iconName="Python" color="#3776AB"/>
+                        <ProjectBadge iconName="C" color="#A8B9CC"/>
+                    </ProjectBadgeContainer>
+                    <hr class="my-2 print:hidden"/>
+                    <ProjectBody>
+                        <p>Simulation video game with peer-to-peer network features, programmed in Python and C.</p>
+                    </ProjectBody>
+                </ProjectCard>
+
+                <ProjectCard image={BloomingImg} imageAlt="Blooming sprout App">
+                    <ProjectTitle>Blooming Sprout</ProjectTitle>
+                    <ProjectBadgeContainer>
+                        <ProjectBadge iconName="Python" color="#3776AB"/>
+                        <ProjectBadge iconName="Numpy" color="#013243"/>
+                    </ProjectBadgeContainer>
+                    <hr class="my-2 print:hidden"/>
+                    <ProjectBody>
+                        <p>Creation of a Socially Driven Game where the visual of an island is generated
+                            procedurally using algorithms like Lazy Flood Fill or cellular automaton implemented in
+                            python.</p>
+                    </ProjectBody>
+                </ProjectCard>
+            </ProjectContainer>
+
+        </SectionContainer>
+
+        <Separator text="✨"/>
+
+        <SectionContainer>
+            <SectionTitle>My Experiences</SectionTitle>
+
+            <XPContainer>
+                <XPCard image={R3Img} imageAlt="R3 Logo">
+                    <XPTitle>Treasurer at R³ Association</XPTitle>
+                    <hr class="my-2">
+                    <XPBody>
+                        <p>An association that promotes access to knowledge by offering private tutoring to students in
+                            difficulty and organizing conferences on the life of an engineering student.</p>
+                        <p>As well as taking part in the association's activities as a member, my involvement as
+                            treasurer has enabled me to acquire additional skills, such as teamwork and managing a bank
+                            account.</p>
+                    </XPBody>
+                </XPCard>
+
+                <XPCard image={CodinsaImg} imageAlt="Codinsa Logo">
+                    <XPTitle>Codinsa Helper & two-time finalist</XPTitle>
+                    <hr class="my-2">
+                    <XPBody>
+                        <p>Annual computer science competition bringing together all the schools of the INSA group,
+                            constituted of two phases. </p>
+                        <p>In the first one students need to solve Coding Challenges of increasing difficulty and
+                            score points. </p>
+                        <p>In the second phase, the final, every student with the maximum amount of points in each
+                            INSA meets and make a team that will have to code in 24 hours an AI which will compete
+                            against other teams' AIs.</p>
+                    </XPBody>
+                </XPCard>
+
+                <XPCard image={Killer2Img} imageAlt="Killer Logo">
+                    <XPTitle>Killer Project frontend lead</XPTitle>
+                    <hr class="my-2">
+                    <XPBody>
+                        <p>Large-scale game ( ~200 people ) requiring a Rust backend and a React Native application.
+                            This project was led by a team of 7 people and I played the role of React Native
+                            application manager.</p>
+                    </XPBody>
+                </XPCard>
+
+                <XPCard image={MorcomImg} imageAlt="Killer Logo">
+                    <XPTitle>Self-entrepreneurship: Morcom</XPTitle>
+                    <hr class="my-2">
+                    <XPBody>
+                        <p>Morcom is the company I've created and run on my own.</p>
+                        <p>This company allows me to take on short-term web design and web programming assignments.</p>
+                        <p>This business has taught me how to manage a project from start to finish, with time
+                            constraints, and how to manage customer relations.</p>
+                    </XPBody>
+                </XPCard>
+
+                <XPCard image={NDIImg} imageAlt="Killer Logo">
+                    <XPTitle>Killer Project frontend lead</XPTitle>
+                    <hr class="my-2">
+                    <XPBody>
+                        <p></p>
+                    </XPBody>
+                </XPCard>
+
+            </XPContainer>
+
+        </SectionContainer>
+    </main>
+    <Footer/>
 </Layout>

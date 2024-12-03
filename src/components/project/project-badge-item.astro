@@ -1,0 +1,6 @@
+---
+const { iconName, badgeText = iconName, iconColor = "white", color, ...props } = Astro.props;
+---
+
+<img alt={badgeText} loading="lazy"
+     src={"https://img.shields.io/badge/-" + badgeText + "-" + color.substring(1) + "?style=flat-square&logo=" + iconName + "&logoColor=" + iconColor}/>

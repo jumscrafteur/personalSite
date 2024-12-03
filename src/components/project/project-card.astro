@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+
+const { image, imageAlt, ...props } = Astro.props;
+---
+
+<article class="flex flex-col overflow-hidden rounded-md print:rounded-none shadow-lg print:shadow-none border print:border-0 print:border-l-2 dark:border-zinc-800">
+    <Image src={image} class="rounded aspect-video print:hidden" alt={imageAlt}/>
+    <div class="p-4 print:p-0 print:pl-4 flex flex-col">
+        <slot/>
+    </div>
+</article>

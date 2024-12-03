@@ -1,0 +1,20 @@
+---
+const { header, ...props } = Astro.props;
+
+import SkillRow from './skill-row.astro';
+---
+
+<div class="rounded-md overflow-hidden border dark:border-zinc-800 shadow-md h-fit">
+    <table class="w-full text-sm text-left">
+        <thead class="text-md uppercase bg-gray-50 dark:bg-zinc-800 ">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                {header}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+            <slot/>
+        </tbody>
+    </table>
+</div>

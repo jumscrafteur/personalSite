@@ -1,0 +1,9 @@
+---
+import {twMerge} from "tailwind-merge";
+
+const { class : className , ...props } = Astro.props;
+---
+
+<div class={twMerge("flex flex-col justify-center items-center mx-auto gap-2 w-full print:break-after-page", className )}>
+    <slot/>
+</div>
