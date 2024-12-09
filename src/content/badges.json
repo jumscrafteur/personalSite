@@ -1,0 +1,60 @@
+{
+  "PHP": {
+    "iconName": "PHP",
+    "color": "#777BB4"
+  },
+  "Apache": {
+    "iconName": "Apache",
+    "color": "#D22128"
+  },
+  "Codeigniter": {
+    "iconName": "Codeigniter",
+    "color": "#EF4223"
+  },
+  "React Native": {
+    "iconName": "React",
+    "badgeText": "React Native",
+    "color": "#61DAFB",
+    "iconColor": "black"
+  },
+  "Rust": {
+    "iconName": "Rust",
+    "color": "#000000"
+  },
+  "Svelte": {
+    "iconName": "Svelte",
+    "color": "#FF3E00"
+  },
+  "Vite": {
+    "iconName": "Vite",
+    "color": "#646CFF"
+  },
+  "TS": {
+    "iconName": "TS",
+    "color": "#3178C6"
+  },
+  "PostCSS": {
+    "iconName": "PostCSS",
+    "color": "#DD3A0A"
+  },
+  "Nodejs": {
+    "iconName": "Nodejs",
+    "color": "#3c873a"
+  },
+  "Express": {
+    "iconName": "Express",
+    "color": "#353535"
+  },
+  "Python": {
+    "iconName": "Python",
+    "color": "#3776AB"
+  },
+  "C": {
+    "iconName": "C",
+    "color": "#A8B9CC"
+  },
+  "Numpy": {
+    "iconName": "Numpy",
+    "color": "#013243"
+  }
+}

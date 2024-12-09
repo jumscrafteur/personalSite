@@ -1,3 +1,8 @@
-<div class="flex flex-col gap-2 print:gap-1">
+---
+const { printText = "", ...props } = Astro.props;
+---
+
+<div class="flex flex-col gap-2 print:*:hidden">
     <slot/>
 </div>
+<p class="hidden text-sm print:block">{printText}</p>

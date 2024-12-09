@@ -1,3 +1,16 @@
-<ol class="w-4/5 print:w-full py-8 print:py-0 print:pl-2 mt-4 border-l-4 print:border-l-0 border-gray-200 dark:border-l-zinc-700 gap-4 flex flex-col">
-   <slot/>
+---
+import {getCollection} from 'astro:content';
+import TimelineElement from './timeline-element.astro';
+
+
+const timelineEntries = await getCollection('timeline');
+
+---
+
+<ol class="w-4/5 print:w-full py-8 print:py-0 mt-4 print:mt-0 border-l-4 print:border-l-0 border-gray-200 dark:border-l-zinc-700 gap-4 print:gap-2 flex flex-col">
+   {
+      timelineEntries.map((t) =>
+          <TimelineElement timelineElementEntry={t}/>
+      )
+   }
 </ol>

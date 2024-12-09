@@ -1,3 +1,34 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 print:grid-cols-1 gap-4 mt-4 w-full">
-    <slot/>
+---
+import {getCollection, render} from 'astro:content';
+
+import SkillRow from "./skill-row.astro";
+import SkillTable from "./skill-table.astro";
+import SkillCol from "./skill-col.astro";
+
+const skillsEntries = await getCollection("skills");
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 print:grid-cols-1 gap-4 mt-4 print:mt-0 w-full">
+    <SkillCol>
+        {skillsEntries.map((s) => (
+            (s.data.side == "left") && (
+                <SkillTable header={s.data.name}>
+                    { s.data.subSkill.map((ss) => (
+                            <SkillRow><u>{ss.name}</u> : {ss.tools.join(", ")}</SkillRow>
+                    ))
+                    }
+                </SkillTable>
+        )))}
+    </SkillCol>
+    <SkillCol>
+        {skillsEntries.map((s) => (
+            (s.data.side == "right") && (
+                    <SkillTable header={s.data.name}>
+                        {s.data.subSkill.map((ss) => (
+                                <SkillRow><u>{ss.name}</u> : {ss.tools.join(", ")}</SkillRow>
+                        ))}
+                    </SkillTable>
+            )
+        ))}
+    </SkillCol>
+
 </div>

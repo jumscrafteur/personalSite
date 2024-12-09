@@ -1,5 +1,14 @@
 ---
-const { iconName, badgeText = iconName, iconColor = "white", color, ...props } = Astro.props;
+import { getEntry } from "astro:content";
+
+interface Props {
+    id: string;
+}
+const { id} = Astro.props;
+
+const badgeEntry = await getEntry("badges", id)
+
+const {badgeText, color, iconName, iconColor} = badgeEntry.data
 ---
 
 <img alt={badgeText} loading="lazy"

@@ -1,3 +1,15 @@
-<div class="grid grid-cols-1 md:grid-cols-2 print:grid-cols-1 gap-4 mt-4">
-    <slot/>
+---
+import ProjectCard from "./project-card.astro";
+
+import {getCollection} from 'astro:content';
+
+
+const projectsEntries = await getCollection('projects');
+---
+<div class="grid grid-cols-1 md:grid-cols-2 print:grid-cols-1 gap-4 print:gap-2 mt-4 print:mt-0">
+
+    {projectsEntries.map((p) => (
+        <ProjectCard projectEntry={p}/>
+    ))}
+
 </div>

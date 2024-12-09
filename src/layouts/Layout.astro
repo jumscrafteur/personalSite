@@ -1,13 +1,46 @@
+---
+import { SEO } from "astro-seo";
+---
 <!doctype html>
 <html lang="fr">
 	<head>
+		<SEO
+			title="Home"
+			titleTemplate="%s - Hugo Sansané's website"
+			titleDefault="Hugo Sansané's website"
+			description="This is a site where you will be able to learn more about me and my projects."
+			openGraph={{
+				basic: {
+					title: "Get to know me ",
+					type: "profile",
+					image: "https://jumscrafteur.fr/OGImageRect.png",
+				},
+				optional : {
+					description : "This is a site where you will be able to learn more about me and my projects.",
+					locale: "fr_FR"
+				},
+				image : {
+					type: "image/png",
+					width: 1200,
+					height: 630,
+					alt: "Hugo Sansané's website banner"
+				},
+			}}
+
+			twitter={{
+				card: "summary",
+				image: "https://jumscrafteur.fr/OGImageSquare.png",
+				imageAlt: "Hugo Sansané's website banner",
+				description: "Get to learn more about me and my projects !"
+			}}
+		/>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title></title>
 	</head>
-	<body class="dark:bg-zinc-900 dark:text-zinc-200">
+	<body class="dark:bg-zinc-900 dark:text-zinc-200 ">
 		<slot />
 	</body>
 </html>

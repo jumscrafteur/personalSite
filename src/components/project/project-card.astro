@@ -1,12 +1,35 @@
 ---
 import { Image } from 'astro:assets';
+import {twMerge} from "tailwind-merge";
+import {type CollectionEntry} from 'astro:content';
+import ProjectTitle from "./project-title.astro";
+import ProjectBadgeContainer from "./project-badge-container.astro";
+import ProjectBadge from "./project-badge-item.astro";
+import ProjectBody from "./project-body.astro";
 
-const { image, imageAlt, ...props } = Astro.props;
+
+interface Props {
+    projectEntry: CollectionEntry<"projects">
+}
+
+const { projectEntry } = Astro.props;
+const {image, imageAlt, showInPrint, printText, name, badges} = projectEntry.data
+
+const { Content } = await projectEntry.render()
 ---
 
-<article class="flex flex-col overflow-hidden rounded-md print:rounded-none shadow-lg print:shadow-none border print:border-0 print:border-l-2 dark:border-zinc-800">
+<article class={twMerge(
+    " print:hidden flex-col overflow-hidden rounded-md shadow-lg border dark:border-zinc-800"
+    , showInPrint && "print:flex print:rounded-none print:shadow-none print:border-0 print:border-l-4 print:border-neutral-400"
+)}>
     <Image src={image} class="rounded aspect-video print:hidden" alt={imageAlt}/>
-    <div class="p-4 print:p-0 print:pl-4 flex flex-col">
-        <slot/>
+    <div class="p-4 print:p-0 print:pl-2 flex flex-col">
+        <ProjectTitle>{name}</ProjectTitle>
+        <ProjectBadgeContainer badgeEntries={badges}/>
+        <hr class="my-2 print:hidden"/>
+        <ProjectBody
+                printText={printText}>
+            <Content />
+        </ProjectBody>
     </div>
 </article>

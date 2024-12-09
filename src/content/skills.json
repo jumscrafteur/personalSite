@@ -1,0 +1,78 @@
+{
+  "DevOps": {
+    "name": "DevOps",
+    "side" : "right",
+    "subSkill": [
+      {
+        "name": "Deployment",
+        "tools": ["Docker", "Nix"]
+      },
+      {
+        "name": "Collaboration",
+        "tools": ["Git", "Github"]
+      },
+      {
+        "name": "Virtualisation",
+        "tools": ["VMware", "Virtual Box"]
+      },
+      {
+        "name": "Backend & Data",
+        "tools": ["Express", "HTMX", "SQL", "GraphQL", "MongoDB", "Firestore"]
+      }
+    ]
+  },
+  "Graphic Design": {
+    "name": "Graphic Design",
+    "side" : "left",
+    "subSkill": [
+      {
+        "name": "UX Design",
+        "tools": ["Figma", "Inkscape"]
+      },
+      {
+        "name": "Adobe suite",
+        "tools": ["Photoshop", "Illustrator"]
+      }
+    ]
+  },
+  "Other": {
+    "name": "Other",
+    "side" : "right",
+    "subSkill": [
+      {
+        "name": "Languages",
+        "tools": ["Python", "Rust", "C", "Bash"]
+      },
+      {
+        "name": "Game Engines",
+        "tools": ["Pygame", "Unity"]
+      },
+      {
+        "name": "Data Visualisation",
+        "tools": ["Chart.js", "Pandas", "Matplotlib"]
+      }
+    ]
+  },
+  "Web & Mobile": {
+  "name": "Web & Mobile",
+  "side" : "left",
+  "subSkill": [
+    {
+      "name": "Basics",
+      "tools": ["HTML", "PHP", "CSS", "Javascript/Typescript"]
+    },
+    {
+      "name": "Frameworks",
+      "tools": ["Astro", "Svelte", "React", "CodeIgniter"]
+    },
+    {
+      "name": "Mobile",
+      "tools": ["React-Native", "Expo", "Swift UI"]
+    },
+    {
+      "name": "Backend & Data",
+      "tools": ["Express", "HTMX", "SQL", "GraphQL", "MongoDB", "Firestore"]
+    }
+  ]
+}
+}

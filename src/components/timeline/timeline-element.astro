@@ -1,3 +1,21 @@
-<div class="print:break-inside-avoid flex flex-col gap-2 print:gap-1 print:border-l-2 print:pl-2">
-    <slot/>
+---
+import { type CollectionEntry } from 'astro:content';
+
+interface Props {
+    timelineElementEntry : CollectionEntry<"timeline">
+}
+
+import TimelineBody from "./timeline-body.astro";
+import TimelineHeader from "./timeline-header.astro";
+
+const { timelineElementEntry } = Astro.props
+
+const { Content} = await timelineElementEntry.render()
+
+---
+<div class="print:break-inside-avoid flex flex-col gap-2 print:gap-1 print:border-l-4 print:border-neutral-400 print:pl-2 print:text-sm">
+    <TimelineHeader icon={timelineElementEntry.data.icon}>{timelineElementEntry.data.title}</TimelineHeader>
+    <TimelineBody printText={timelineElementEntry.data.printText}>
+        <Content/>
+    </TimelineBody>
 </div>

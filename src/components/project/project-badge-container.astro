@@ -1,3 +1,18 @@
-<div class="inline-flex *:rounded gap-1">
-    <slot/>
+---
+import ProjectBadge from "./project-badge-item.astro";
+
+interface Props {
+    badgeEntries: {
+        collection: "badges"
+        id: string
+    }[]
+}
+
+const { badgeEntries } = Astro.props;
+
+---
+<div class="inline-flex *:rounded gap-1 print:h-4">
+    {badgeEntries?.map(({id}) => (
+        <ProjectBadge id={id}/>
+    ))}
 </div>
