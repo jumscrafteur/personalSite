@@ -1,6 +1,6 @@
 ---
 import {twMerge} from "tailwind-merge";
-const { text, class : className, ...props } = Astro.props;
+const { text, class : className } = Astro.props;
 ---
 <div class={twMerge("flex gap-2 w-full items-center", className)}>
     <hr class="w-full">
