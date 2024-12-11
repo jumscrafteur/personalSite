@@ -5,4 +5,4 @@ const { printText } = Astro.props;
 <div class="flex print:hidden flex-col gap-2 print:gap-0 print:*:text-sm">
     <slot/>
 </div>
-<p class="text-sm">{printText}</p>
+<p class="text-sm hidden print:block">{printText}</p>
