@@ -1,0 +1,120 @@
+---
+import {ArrowRight} from "lucide";
+import Layout from "../layouts/Layout.astro";
+import LucideIcon from "@/components/lucide-icon.astro";
+---
+<Layout>
+    <main class="flex flex-col gap-8 justify-center items-center m-auto h-full">
+        <div class="flex flex-col *:text-center">
+            <h1 class="text-4xl font-bold">404 - Are you lost ?</h1>
+            <h4>Here is a the <a href="https://xkcd.com/" title="xkcd website" class="underline">xkcd</a> joke of the day to cheer you up</h4>
+        </div>
+
+        <div class="flex flex-col items-center *:text-center w-full gap-2">
+            <div class="w-1/2 h-80 bg-neutral-600 rounded-xl animate-pulse" id="skeleton"/>
+            <img
+                src="https://imgs.xkcd.com/comics/making_tea.png"
+                alt="No, of course we don't microwave the mug WITH the teabag in it. We microwave the teabag separately."
+                class="h-80 hidden p-2 rounded-lg bg-white"
+                id="xkcdImage"
+            />
+        </div>
+
+        <p><a href="/" class="underline inline-flex gap-2 justify-center">You can come back Home now <LucideIcon icon={ArrowRight} /></a></p>
+
+    </main>
+
+    <script>
+        const skeletonElement: HTMLDivElement | null = document.querySelector("#skeleton");
+        const xkcdImageElement: HTMLImageElement | null = document.querySelector("#xkcdImage");
+
+        interface DataObject {
+            month: string; // Doit être un nombre entre "1" et "12"
+            num: number;   // Doit être un nombre positif
+            link: string;  // Peut être une chaîne vide ou un lien
+            year: string;  // Doit représenter une année valide (ex: "2024")
+            news: string;  // Peut être une chaîne vide
+            safe_title: string; // Ne peut pas être vide
+            transcript: string; // Peut être une chaîne vide
+            alt: string; // Ne peut pas être vide
+            img: string; // Doit être une URL valide
+            title: string; // Ne peut pas être vide
+            day: string;  // Doit être un nombre entre "1" et "31"
+        }
+
+
+        function validateObject(data: any ): DataObject {
+            const errors = [];
+
+            // Vérification des champs obligatoires
+            if (!data.month || isNaN(data.month) || Number(data.month) < 1 || Number(data.month) > 12) {
+                errors.push("'month' doit être un nombre entre 1 et 12.");
+            }
+
+            if (!data.day || isNaN(data.day) || Number(data.day) < 1 || Number(data.day) > 31) {
+                errors.push("'day' doit être un nombre entre 1 et 31.");
+            }
+
+            if (!data.year || isNaN(data.year) || Number(data.year) < 1) {
+                errors.push("'year' doit être une année valide.");
+            }
+
+            if (!data.num || typeof data.num !== 'number' || data.num <= 0) {
+                errors.push("'num' doit être un nombre positif.");
+            }
+
+            if (!data.title || typeof data.title !== 'string' || data.title.trim() === "") {
+                errors.push("'title' est obligatoire et ne peut pas être vide.");
+            }
+
+            if (!data.img || typeof data.img !== 'string' || !/^https?:\/\//.test(data.img)) {
+                errors.push("'img' doit être une URL valide.");
+            }
+
+            if (typeof data.link !== 'string') {
+                errors.push("'link' doit être une chaîne de caractères.");
+            }
+
+            if (typeof data.safe_title !== 'string' || data.safe_title.trim() === "") {
+                errors.push("'safe_title' est obligatoire et ne peut pas être vide.");
+            }
+
+            if (typeof data.alt !== 'string' || data.alt.trim() === "") {
+                errors.push("'alt' est obligatoire et ne peut pas être vide.");
+            }
+
+            if (typeof data.transcript !== 'string') {
+                errors.push("'transcript' doit être une chaîne de caractères.");
+            }
+
+            if (typeof data.news !== 'string') {
+                errors.push("'news' doit être une chaîne de caractères.");
+            }
+
+            if (errors.length > 0)
+                throw new Error("Réponse API non valide");
+
+            // Résultat de la validation
+            return data
+        }
+
+
+        const loadPage = async () => {
+            if (skeletonElement === null || xkcdImageElement === null) return;
+            const data = await fetch("https://xkcd.vercel.app/?comic=latest");
+            const json = await data.json()
+
+
+            const validationResult = validateObject(json);
+
+
+            xkcdImageElement.src = validationResult.img;
+            xkcdImageElement.alt = validationResult.alt;
+
+            skeletonElement.classList.toggle("hidden");
+            xkcdImageElement.classList.toggle("hidden");
+        }
+
+        loadPage()
+    </script>
+</Layout>
