@@ -3,7 +3,7 @@ const { printText } = Astro.props;
 ---
 
 <li class="flex items-center gap-4">
-    <span class="w-8 h-8 inline-block print:hidden"></span>
+    <span class="w-8 h-8 hidden sm:inline-block print:hidden"></span>
     <div class="bg-gray-100 dark:bg-zinc-800 p-4 rounded border-2 border-dashed dark:border-zinc-700 flex flex-col gap-2 print:hidden">
         <slot/>
     </div>

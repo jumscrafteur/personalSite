@@ -17,7 +17,7 @@ const {image, imageAlt, showInPrint, printText, name} = xpEntry.data
 const { Content} = await xpEntry.render()
 ---
 
-<article class={twMerge("print:hidden flex gap-4 rounded-md even:flex-row-reverse", showInPrint && "print:flex")}>
+<article class={twMerge("print:hidden flex flex-col gap-4 rounded-md sm:flex-row sm:even:flex-row-reverse", showInPrint && "print:flex")}>
     <div class="flex items-center justify-center print:hidden">
         <Image src={image} class="aspect-square max-w-64 rounded-md border shadow-xl dark:border-zinc-800"
              alt={imageAlt} />
