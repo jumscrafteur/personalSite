@@ -2,9 +2,8 @@
 import {Image} from "astro:assets"
 
 import Layout from '../layouts/Layout.astro';
-import LucideIcon from "../components/lucide-icon.astro";
 
-import {Mail, Linkedin, Github} from "lucide";
+import { Icon } from 'astro-icon/components'
 
 import SectionTitle from "../components/section-title.astro";
 import SectionContainer from "../components/section-container.astro";
@@ -32,19 +31,19 @@ import websiteQRCode from "../assets/images/websiteQRCode.png"
             <div class="flex gap-8 w-fit print:hidden">
                 <a href="mailto:hugo.sansane@insa-cvl.fr"
                    class="flex gap-2 text-white bg-stone-500 py-2 px-4 rounded-full" title="my email address">
-                    <LucideIcon icon={Mail}/>
+                    <Icon name="Lucide/mail" size={24}/>
                 </a>
                 <a href="https://www.linkedin.com/in/hugo-sansan%C3%A9/"
                    class="flex gap-2 text-white bg-[#0e76a8] py-2 px-4 rounded-full"
                    title="linkedin"
                 >
-                    <LucideIcon icon={Linkedin}/>
+                    <Icon name="SimpleIcons/linkedin" size={24}/>
                 </a>
                 <a href="https://github.com/jumscrafteur"
                    class="flex gap-2 text-white bg-[#24292e] py-2 px-4  rounded-full"
                    title="github"
                 >
-                    <LucideIcon icon={Github}/>
+                    <Icon name="SimpleIcons/github" size={24}/>
                 </a>
             </div>
             <div class="hidden print:flex items-center bg-gray-100 rounded-xl border-2 border-dashed p-2">

@@ -52,7 +52,7 @@ jobs:
 
       - name: Deploy files via FTP
         run: |
-          lftp -e "mirror -R . /www && bye" -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }}
+          lftp -e "mirror -vvv -R . /www && bye" -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }}
         env:
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASS: ${{ secrets.FTP_PASS }}
