@@ -7,6 +7,7 @@ const timelineCollection = defineCollection({
         icon : z.string(),
         title : z.string(),
         printText : z.string(),
+        order: z.number(),
     })
 });
 

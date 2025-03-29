@@ -2,6 +2,8 @@
 icon: 🐗
 title: Computer Science and Computer Security Degree at INSA CVL
 printText: A 5-year engineering degree in IT security, covering network security, infrastructure, data structures, databases, language theory, and human sciences like finance, management, and communication.
+order: 3
+
 ---
 
 5-year engineering degree in IT security, infrastructure and network security.

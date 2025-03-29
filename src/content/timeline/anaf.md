@@ -2,6 +2,8 @@
 icon: 🧑‍🎓
 title: 5-month internship in 4th year at ANAF
 printText: An internship with ANAF involved improving the Mesaidesapprenti.fr website’s design, accessibility, and backoffice, while recovering and analyzing undocumented source code.
+order: 2
+
 ---
 
 An internship with the Association Nationale des Apprentis de France (ANAF).
