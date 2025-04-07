@@ -6,7 +6,8 @@ interface Props {
 }
 const { id} = Astro.props;
 
-const badgeEntry = await getEntry("badges", id)
+const badgeEntry = await getEntry("badges", id) || {data:{badgeText:"", color: "", iconName: "", iconColor: ""}}
+
 
 const {badgeText, color, iconName, iconColor} = badgeEntry.data
 ---

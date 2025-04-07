@@ -45,6 +45,12 @@ import websiteQRCode from "../assets/images/websiteQRCode.png"
                 >
                     <Icon name="SimpleIcons/github" size={24}/>
                 </a>
+                <a href="/?print=1"
+                   class="flex gap-2 text-white bg-teal-900 py-2 px-4  rounded-full"
+                   title="github"
+                >
+                    <Icon name="Lucide/file" size={24}/>
+                </a>
             </div>
             <div class="hidden print:flex items-center bg-gray-100 rounded-xl border-2 border-dashed p-2">
                 <p class="flex flex-col px-4 py-2 text-right w-fit">
@@ -120,4 +126,11 @@ import websiteQRCode from "../assets/images/websiteQRCode.png"
 
     </main>
     <Footer/>
+
+    <script>
+
+        const pageParams = new URLSearchParams(window.location.search);
+        if(pageParams.get("print") === "1") print();
+
+    </script>
 </Layout>
