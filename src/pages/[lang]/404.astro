@@ -1,7 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang : "en" }},
+    { params: { lang : "fr" }},
+];
+}
 ---
 <Layout>
     <main class="flex flex-col gap-8 justify-center items-center m-auto h-full">

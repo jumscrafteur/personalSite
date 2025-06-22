@@ -21,7 +21,7 @@ type PageContentTranslation = {
     }
 }
 
-export function getTranslation(lang: Langs, ...path:string[]) {
+export function getTranslation(lang: string, ...path:string[]) {
     let translationTree: any = I18N_UI[lang]
 
     while (path.length > 0) {

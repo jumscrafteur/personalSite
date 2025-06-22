@@ -27,6 +27,11 @@ import XPCard from "@/components/xp/xp-card.astro";
 
 const { lang } = Astro.params;
 
+if (!["en", "fr"].includes(lang))
+    throw new Error("Invalid lang param");
+    
+
+lang
 const timelineEntries = await getCollection('timeline', (el) => el.id.startsWith(lang));
 const skillsEntries = await getCollection('skills', (el) => el.id.startsWith(lang));
 const projectsEntries = await getCollection('projects', (el) => el.id.startsWith(lang));
@@ -34,9 +39,9 @@ const xpEntries = await getCollection('xp', (el) => el.id.startsWith(lang));
 
 export async function getStaticPaths() {
   return [
-    { params: { lang : "en" }},
-    { params: { lang : "fr" }},
-];
+        { params: { lang : "en" }},
+        { params: { lang : "fr" }},
+    ];
 }
 ---
 
