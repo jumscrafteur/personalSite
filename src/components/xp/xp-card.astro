@@ -14,7 +14,6 @@ const { xpEntry } = Astro.props;
 
 const {image, imageAlt, showInPrint, printText, name} = xpEntry.data
 
-const { Content} = await xpEntry.render()
 ---
 
 <article class={twMerge("print:hidden flex flex-col gap-4 rounded-md sm:flex-row sm:even:flex-row-reverse", showInPrint && "print:flex")}>
@@ -26,7 +25,7 @@ const { Content} = await xpEntry.render()
         <XPTitle>{name}</XPTitle>
         <hr class="my-2 print:hidden">
         <XPBody printText={printText}>
-            <Content/>
+            <Fragment set:html={xpEntry.rendered?.html}/>
         </XPBody>
     </div>
 </article>

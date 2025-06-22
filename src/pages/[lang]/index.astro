@@ -1,0 +1,188 @@
+---
+import {Image} from "astro:assets"
+
+import Layout from '../../layouts/Layout.astro';
+
+import { Icon } from 'astro-icon/components'
+
+import SectionTitle from "../../components/section-title.astro";
+import SectionContainer from "../../components/section-container.astro";
+
+import Separator from "../../components/separator.astro";
+import Footer from "../../components/footer.astro";
+
+import TimelineContainer from "../../components/timeline/timeline-container.astro";
+import SkillContainer from "../../components/skill/skill-container.astro";
+import ProjectContainer from "../../components/project/project-container.astro"
+import XPContainer from "../../components/xp/xp-container.astro"
+
+import websiteQRCode from "../../assets/images/websiteQRCode.png"
+import { getCollection } from "astro:content";
+import TimelineElement from "@/components/timeline/timeline-element.astro";
+import { getTranslation } from "@/i18n";
+import SkillTable from "@/components/skill/skill-table.astro";
+import SkillRow from "@/components/skill/skill-row.astro";
+import ProjectCard from "@/components/project/project-card.astro";
+import XPCard from "@/components/xp/xp-card.astro";
+
+const { lang } = Astro.params;
+
+const timelineEntries = await getCollection('timeline', (el) => el.id.startsWith(lang));
+const skillsEntries = await getCollection('skills', (el) => el.id.startsWith(lang));
+const projectsEntries = await getCollection('projects', (el) => el.id.startsWith(lang));
+const xpEntries = await getCollection('xp', (el) => el.id.startsWith(lang));
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang : "en" }},
+    { params: { lang : "fr" }},
+];
+}
+---
+
+<Layout>
+    <main class="flex flex-col max-w-screen-lg print:max-w-full mx-auto px-4 print:px-0 gap-8 print:gap-2">
+        <!-- hero -->
+        <SectionContainer class="mt-32 print:mt-0 print:items-center print:flex-row justify-between">
+            <div class="flex flex-col justify-center items-center gap-2 print:gap-0">
+                <h1 class="text-6xl font-black block w-fit tracking-tighter text-center print:text-3xl">Hugo Sansané
+                    <span class="print:hidden">👋</span></h1>
+                <h4 class="text-lg print:text-base">{getTranslation(lang, "hero", "subtitle")}</h4>
+            </div>
+            <div class="flex gap-8 w-fit print:hidden">
+                <a href="mailto:hsansane@gmail.com"
+                   class="flex gap-2 text-white bg-stone-500 py-2 px-4 rounded-full" title="my email address">
+                    <Icon name="Lucide/mail" size={24}/>
+                </a>
+                <a href="https://www.linkedin.com/in/hugo-sansan%C3%A9/"
+                   class="flex gap-2 text-white bg-[#0e76a8] py-2 px-4 rounded-full"
+                   title="linkedin"
+                >
+                    <Icon name="SimpleIcons/linkedin" size={24}/>
+                </a>
+                <a href="https://github.com/jumscrafteur"
+                   class="flex gap-2 text-white bg-[#24292e] py-2 px-4  rounded-full"
+                   title="github"
+                >
+                    <Icon name="SimpleIcons/github" size={24}/>
+                </a>
+                <a href="./?print=1"
+                   class="flex gap-2 text-white bg-teal-900 py-2 px-4  rounded-full"
+                   title="github"
+                >
+                    <Icon name="Lucide/file" size={24}/>
+                </a>
+            </div>
+            <div class="hidden print:flex items-center bg-gray-100 rounded-xl border-2 border-dashed p-2">
+                <p class="flex flex-col px-4 py-2 text-right w-fit">
+                    <a href="mailto:hsansane@gmail.com" title="my email address">
+                        hsansane@gmail.com
+                    </a>
+                    <!-- <span>+33 6 17 13 93 67</span> -->
+                </p>
+                <a href="https://jumscrafteur.fr" title="personal website">
+                    <Image src={websiteQRCode} alt="website qr code" width="64" height="64"/>
+                </a>
+            </div>
+        </SectionContainer>
+
+        <Separator text="✨" class="print:hidden"/>
+
+        <!-- curriculum -->
+        <SectionContainer>
+            <SectionTitle class="hidden print:block">{getTranslation(lang, "curriculum", "title")}</SectionTitle>
+            <div class="flex flex-col gap-2 print:hidden">
+                {
+                    getTranslation(lang, "curriculum", "description").split("\n").map(str =>
+                        <p>{str}</p>
+                    )
+                }
+            </div>
+
+            <TimelineContainer>
+               {
+                    timelineEntries.sort((t1, t2) => t2.data.order - t1.data.order).map((t) =>
+                        <TimelineElement timelineElementEntry={t}>
+                            <Fragment set:html={t.rendered?.html}/>
+                        </TimelineElement>
+                    )
+                }
+            </TimelineContainer>
+
+        </SectionContainer>
+
+        <Separator text="✨" class="print:hidden"/>
+
+        <!-- skills -->
+        <SectionContainer class="print:hidden">
+            <SectionTitle>{getTranslation(lang, "skills", "title")}</SectionTitle>
+
+            <SkillContainer>
+                <Fragment slot="left">
+                    {skillsEntries.map(({data:skill}) => (
+                        (skill.side == "left") && (
+                            <SkillTable header={skill.name}>
+                                { skill.subSkill.map((ss) => (
+                                        <SkillRow><u>{ss.name}</u> : {ss.tools.join(", ")}</SkillRow>
+                                ))
+                                }
+                            </SkillTable>
+                    )))}
+                </Fragment>
+                <Fragment slot="right">
+                    {
+                    skillsEntries.map(({data:skill}) => (
+                        (skill.side == "right") && (
+                            <SkillTable header={skill.name}>
+                                { skill.subSkill.map((ss) => (
+                                        <SkillRow><u>{ss.name}</u> : {ss.tools.join(", ")}</SkillRow>
+                                ))
+                                }
+                            </SkillTable>
+                    )
+                    ))}
+                </Fragment>
+            </SkillContainer>
+
+        </SectionContainer>
+
+        <Separator text="✨"/>
+
+        <!-- Projects -->
+        <SectionContainer>
+            <SectionTitle>{getTranslation(lang, "projects", "title")}</SectionTitle>
+
+            <ProjectContainer>
+                    {projectsEntries.map((p) => (
+                        // <p>{JSON.stringify(p)}</p>
+                        <ProjectCard projectEntry={p}/>
+                    ))}
+            </ProjectContainer>
+
+        </SectionContainer>
+
+        <Separator text="✨"/>
+
+        <SectionContainer>
+            <SectionTitle>{getTranslation(lang, "xp", "title")}</SectionTitle>
+
+            <XPContainer>
+                { xpEntries.map((xp) => (
+                    // <p>o</p>
+                    <XPCard xpEntry={xp} />
+                ))
+                }
+            </XPContainer>
+
+        </SectionContainer>
+
+    </main>
+    <Footer/>
+
+    <script>
+
+        const pageParams = new URLSearchParams(window.location.search);
+        if(pageParams.get("print") === "1") print();
+
+    </script>
+</Layout>

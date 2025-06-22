@@ -1,8 +1,9 @@
 import {z, defineCollection, reference} from 'astro:content';
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 
 const timelineCollection = defineCollection({
-    type : 'content',
+    loader: glob({ pattern: '**/timeline/*.md', base: "src/content/"}),
+    // type : 'content',
     schema: z.object({
         icon : z.string(),
         title : z.string(),
@@ -12,7 +13,7 @@ const timelineCollection = defineCollection({
 });
 
 const skillsCollection = defineCollection({
-    loader: file("src/content/skills.json"),
+    loader: glob({ pattern: '**/skills/*.json', base: "src/content/"}),
     schema: z.object({
         name: z.string(),
         side: z.enum(["left", "right"]),
@@ -24,7 +25,7 @@ const skillsCollection = defineCollection({
 });
 
 const projectsCollection = defineCollection({
-    type : 'content',
+    loader: glob({ pattern: '**/projects/*.md', base: "src/content/"}),
     schema: ({image}) => z.object({
         name: z.string(),
         image: image(),
@@ -49,7 +50,7 @@ const badgesCollection = defineCollection({
 });
 
 const xpCollection = defineCollection({
-    type : 'content',
+    loader: glob({ pattern: '**/xp/*.md', base: "src/content/"}),
     schema: ({image}) => z.object({
         name: z.string(),
         image: image(),

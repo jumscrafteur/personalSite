@@ -14,7 +14,6 @@ interface Props {
 const { projectEntry } = Astro.props;
 const {image, imageAlt, showInPrint, printText, name, badges} = projectEntry.data
 
-const { Content } = await projectEntry.render()
 ---
 
 <article class={twMerge(
@@ -28,7 +27,7 @@ const { Content } = await projectEntry.render()
         <hr class="my-2 print:hidden"/>
         <ProjectBody
                 printText={printText}>
-            <Content />
+            <Fragment set:html={projectEntry.rendered?.html} />
         </ProjectBody>
     </div>
 </article>

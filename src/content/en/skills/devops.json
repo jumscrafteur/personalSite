@@ -1,0 +1,22 @@
+{
+  "name": "DevOps",
+  "side": "right",
+  "subSkill": [
+    {
+      "name": "Deployment",
+      "tools": ["Docker", "Nix"]
+    },
+    {
+      "name": "Collaboration",
+      "tools": ["Git", "Github"]
+    },
+    {
+      "name": "Virtualisation",
+      "tools": ["VMware", "Virtual Box"]
+    },
+    {
+      "name": "Backend & Data",
+      "tools": ["Express", "HTMX", "SQL", "GraphQL", "MongoDB", "Firestore"]
+    }
+  ]
+}

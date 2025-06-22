@@ -2,12 +2,7 @@
 import XPCard from "./xp-card.astro";
 
 import {getCollection} from 'astro:content';
-
-
-const xpEntries = await getCollection('xp');
 ---
 <div class="flex flex-col gap-12 sm:gap-4 print:gap-2 mt-4 w-full">
-    { xpEntries.map((xp) => (
-        <XPCard xpEntry={xp} />
-    ))}
+    <slot></slot>
 </div>

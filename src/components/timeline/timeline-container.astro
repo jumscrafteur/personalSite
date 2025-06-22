@@ -8,9 +8,11 @@ const timelineEntries = await getCollection('timeline');
 ---
 
 <ol class="sm:w-4/5 print:w-full py-8 print:py-0 mt-4 print:mt-0 sm:border-l-4 print:border-l-0 border-gray-200 dark:border-l-zinc-700 gap-4 print:gap-2 flex flex-col">
-   {
+   <!-- {
       timelineEntries.sort((t1, t2) => t2.data.order - t1.data.order).map((t) =>
           <TimelineElement timelineElementEntry={t}/>
       )
-   }
+   } -->
+      <slot></slot>
+      
 </ol>

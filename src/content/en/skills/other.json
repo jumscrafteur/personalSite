@@ -1,0 +1,18 @@
+{
+  "name": "Other",
+  "side": "right",
+  "subSkill": [
+    {
+      "name": "Languages",
+      "tools": ["Python", "Rust", "C", "Bash"]
+    },
+    {
+      "name": "Game Engines",
+      "tools": ["Pygame", "Unity"]
+    },
+    {
+      "name": "Data Visualisation",
+      "tools": ["Chart.js", "Pandas", "Matplotlib"]
+    }
+  ]
+}

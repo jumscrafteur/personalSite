@@ -1,0 +1,22 @@
+{
+  "name": "Web & Mobile",
+  "side" : "left",
+  "subSkill": [
+    {
+      "name": "Basics",
+      "tools": ["HTML", "PHP", "CSS", "Javascript/Typescript"]
+    },
+    {
+      "name": "Frameworks",
+      "tools": ["Astro", "Svelte", "React", "CodeIgniter"]
+    },
+    {
+      "name": "Mobile",
+      "tools": ["React-Native", "Expo", "Swift UI"]
+    },
+    {
+      "name": "Backend & Data",
+      "tools": ["Express", "HTMX", "SQL", "GraphQL", "MongoDB", "Firestore"]
+    }
+  ]
+}

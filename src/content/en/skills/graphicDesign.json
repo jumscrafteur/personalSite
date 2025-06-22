@@ -1,0 +1,14 @@
+{
+  "name": "Graphic Design",
+  "side": "left",
+  "subSkill": [
+    {
+      "name": "UX Design",
+      "tools": ["Figma", "Inkscape"]
+    },
+    {
+      "name": "Adobe suite",
+      "tools": ["Photoshop", "Illustrator"]
+    }
+  ]
+}
