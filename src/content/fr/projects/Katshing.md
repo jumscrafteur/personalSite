@@ -7,4 +7,4 @@ printText: ""
 badges: ["Svelte"]
 ---
 
-Une application web qui vous permet de convertir différentes devises en utilisant l'API de devises Fixer.
+Une application web qui permet de convertir différentes devises et de faciliter le calcul mental des conversions en utilisant l'API de devises Fixer.

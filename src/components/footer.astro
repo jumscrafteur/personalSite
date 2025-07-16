@@ -1,3 +1,14 @@
+---
+
+interface Props {
+    printFooter: string;
+    lang: string;
+}
+
+const { printFooter, lang } = Astro.props;
+---
+
 <div class="bg-gray-100 dark:bg-zinc-800 py-8 border-t border-gray-200 dark:border-zinc-700 mt-6 print:hidden">
     <p class="max-w-screen-lg mx-auto text-center">Website made with ❤️ by jumscrafteur</p>
 </div>
+<p class="text-center my-4 hidden print:block">{printFooter} : <a href={`https://jumscrafteur.fr/${lang}/`} class="underline">https://jumscrafteur.fr/{lang}/</a></p>

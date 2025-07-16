@@ -7,6 +7,6 @@ printText: "Le Killer est un jeu grandeur nature annuel sur le campus de Bourges
 badges: ["React Native", "Rust"]
 ---
 
-The Killer est un jeu grandeur nature qui se tient chaque année sur le campus de Bourges de l'INSA Centre Val de Loire. Chaque joueur reçoit une carte
-avec un code QR et utilise une application pour découvrir sa cible et deux armes disponibles. Le but : éliminer votre cible avec
-une arme tout en évitant d'être éliminé par votre propre chasseur.
+Le Killer est un jeu grandeur nature qui se tient chaque année sur le campus de Bourges de l'INSA Centre Val de Loire.
+Chaque joueur reçoit une carte avec un code QR et utilise une application pour découvrir sa cible et deux armes disponibles.
+Le but : éliminer sa cible avec une arme tout en évitant d'être éliminé par son propre chasseur.

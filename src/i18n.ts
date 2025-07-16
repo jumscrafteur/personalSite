@@ -19,6 +19,9 @@ type PageContentTranslation = {
     xp : {
         title: string;
     }
+    printFooter : {
+        content: string;
+    }
 }
 
 export function getTranslation(lang: string, ...path:string[]) {
@@ -55,7 +58,11 @@ export const I18N_UI: {[key: string] : PageContentTranslation} = {
         },
         xp: {
             title: "My Experiences"
+        },
+        printFooter: {
+            content: "And a lot more on my website"
         }
+
     },
     fr : {
         hero: {
@@ -73,6 +80,9 @@ export const I18N_UI: {[key: string] : PageContentTranslation} = {
         },
         xp: {
             title: "Mes Experiences"
+        },
+        printFooter: {
+            content: "Découvrez-en plus sur mon site"
         }
     }
 }
