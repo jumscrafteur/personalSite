@@ -2,7 +2,7 @@
 name: Responsable front-end du projet Killer
 image: ./Killer_2.png
 imageAlt: Logo Killer
-showInPrint: true
+showInPrint: false
 printText: "Responsable de l'application React Native pour le jeu Killer, un jeu à grande échelle (environ 200 joueurs) avec un back-end en Rust. Gestion de l'application au sein d'une équipe de 7 personnes."
 ---
 

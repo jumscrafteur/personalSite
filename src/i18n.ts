@@ -44,7 +44,7 @@ export function getTranslation(lang: string, ...path:string[]) {
 export const I18N_UI: {[key: string] : PageContentTranslation} = {
     en : {
         hero : {
-            subtitle : "Aspiring Software Engineer"
+            subtitle : "Developer Analyst"
         },
         curriculum : {
             title : "My Curriculum",
@@ -66,7 +66,7 @@ export const I18N_UI: {[key: string] : PageContentTranslation} = {
     },
     fr : {
         hero: {
-            subtitle : "Ingénieur logiciel en devenir"
+            subtitle : "Analyste Développeur"
         },
         curriculum: {
             title: "Mon Curriculum",

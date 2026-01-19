@@ -2,7 +2,7 @@
 name: Killer Project frontend lead
 image: ./Killer_2.png
 imageAlt: Killer Logo
-showInPrint: true
+showInPrint: false
 printText: "A large-scale game for ~200 players, developed with a Rust backend and a React Native app, where I managed the React Native application as part of a 7-person team."
 ---
 

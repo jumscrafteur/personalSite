@@ -2,7 +2,7 @@
 name: Codinsa Helper & two-time finalist
 image: ./Codinsa.png
 imageAlt: Codinsa Logo
-showInPrint: true
+showInPrint: false
 printText: "An annual computer science competition across all INSA schools, featuring a first phase of coding challenges and a 24-hour final where top students from each INSA develop competing AIs."
 ---
 

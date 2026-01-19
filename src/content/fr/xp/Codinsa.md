@@ -2,7 +2,7 @@
 name: Helper Codinsa et finaliste à deux reprises
 image: ./Codinsa.png
 imageAlt: Logo Codinsa
-showInPrint: true
+showInPrint: false
 printText: "Participation à la compétition Codinsa, une compétition informatique inter-écoles INSA. Impliqué dans les défis de codage et finaliste à deux reprises lors de la phase finale où les équipes créent des IA."
 ---
 
