@@ -8,7 +8,7 @@
     },
     {
       "name": "Frameworks",
-      "tools": ["Astro", "Svelte", "React", "CodeIgniter"]
+      "tools": ["Astro", "Svelte", "React", "CodeIgniter", "FastAPI", "Starlette"]
     },
     {
       "name": "Mobile",

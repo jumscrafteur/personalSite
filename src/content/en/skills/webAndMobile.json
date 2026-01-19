@@ -4,11 +4,11 @@
   "subSkill": [
     {
       "name": "Basics",
-      "tools": ["HTML", "PHP", "CSS", "Javascript/Typescript"]
+      "tools": ["HTML", "PHP", "CSS", "Javascript/Typescript", "Python"]
     },
     {
       "name": "Frameworks",
-      "tools": ["Astro", "Svelte", "React", "CodeIgniter"]
+      "tools": ["Astro", "Svelte", "React", "CodeIgniter", "FastAPI", "Starlette"]
     },
     {
       "name": "Mobile",
