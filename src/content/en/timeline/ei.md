@@ -6,7 +6,7 @@ order: 4
 
 ---
 
-6-month Internship at Euro-Information, the IT branch of **Crédit Mutuel Alliance Fédérale**
+6-month Internship and now working at Euro-Information, the IT branch of **Crédit Mutuel Alliance Fédérale**
 
 This internship involved migrating marketing automation processes from Adobe Campaign to Unica Campaign. Key objectives included: analyzing the existing integration of Adobe Campaign, assessing user requirements, and evaluating the capabilities of Unica Campaign.
 
