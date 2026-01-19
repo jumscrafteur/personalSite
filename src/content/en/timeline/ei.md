@@ -1,7 +1,7 @@
 ---
 icon: 💳
 title: Unica Campaign POC and migration at Euro-Information
-printText: 6-month internship at Euro-Information's IT branch focused on migrating marketing automation processes from Adobe Campaign to Unica Campaign. The role involved analyzing integrations, assessing user needs, and developing administration and project management expertise.
+printText: 6-month Internship and now working at Euro-Information's IT branch focused on migrating marketing automation processes from Adobe Campaign to Unica Campaign. The role involved analyzing integrations, assessing user needs, and developing administration and project management expertise.
 order: 4
 
 ---
